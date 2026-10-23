@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="MYCN 换汇前端交互原型" />
+    <title>MYCN 换汇｜原型</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="announcement">
+      <div class="shell announcement-inner">
+        <span class="notice-dot"></span>
+        <span>本网站为演示原型，不处理真实资金或身份资料。</span>
+        <button class="text-button" data-action="go-help">查看使用说明</button>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="shell header-inner">
+        <button class="brand" data-action="go-home" aria-label="返回首页">
+          <span class="brand-mark">M</span>
+          <span>MYCN <em>换汇</em></span>
+        </button>
+        <nav class="main-nav" aria-label="主导航">
+          <button class="nav-link active" data-action="go-home">首页</button>
+          <button class="nav-link" data-action="go-rates">汇率</button>
+          <button class="nav-link" data-action="go-how">换汇流程</button>
+          <button class="nav-link" data-action="go-help">帮助中心</button>
+        </nav>
+        <div class="header-actions" id="header-actions">
+          <button class="button button-ghost button-small" data-action="go-login">登录</button>
+          <button class="button button-primary button-small" data-action="go-register">注册</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="page active" id="page-home" data-page="home">
+        <div class="shell hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow"><span></span> 留学生专属 · 人民币 &amp; 马币</p>
+            <h1>每一笔换汇，<br /><strong>都清楚安心。</strong></h1>
+            <p class="hero-text">用清楚的汇率、简单的步骤，完成 CNY 与 MYR 之间的换汇申请。全程可查看订单进度。</p>
+            <div class="hero-actions">
+              <button class="button button-primary button-large" data-action="start-exchange">开始换汇 <span>→</span></button>
+              <button class="button button-ghost button-large" data-action="go-how">了解流程</button>
+            </div>
+            <div class="trust-row">
+              <span><b>01</b> 汇率清晰</span>
+              <span><b>02</b> 流程可查</span>
+              <span><b>03</b> 中文服务</span>
+            </div>
+          </div>
+
+          <div class="rate-card elevated">
+            <div class="card-heading">
+              <div>
+                <p class="label">当前参考汇率</p>
+                <h2>CNY / MYR</h2>
+              </div>
+              <span class="live-pill"><i></i> 更新中</span>
+            </div>
+            <div class="big-rate"><span>1</span> CNY <b>=</b> <strong id="home-rate">0.6252</strong> MYR</div>
+            <p class="rate-time">更新于 <span id="rate-time">--:--</span>（演示数据）</p>
+            <div class="rate-divider"></div>
+            <div class="quick-convert">
+              <label>我想换</label>
+              <div class="mini-convert-row">
+                <input id="home-amount" type="number" min="0" value="1000" inputmode="decimal" aria-label="换汇金额" />
+                <span class="currency-tag">CNY</span>
+              </div>
+              <div class="conversion-arrow">↓</div>
+              <div class="mini-convert-row muted-row">
+                <output id="home-result">625.20</output>
+                <span class="currency-tag">MYR</span>
+              </div>
+            </div>
+            <button class="button button-primary button-full" data-action="start-exchange">按此汇率换汇</button>
+          </div>
+        </div>
+
+        <section class="shell section-block steps-preview">
+          <div class="section-title-row">
+            <div>
+              <p class="eyebrow"><span></span> 只需几步</p>
+              <h2>简单完成换汇申请</h2>
+            </div>
+            <button class="text-button arrow-link" data-action="go-how">查看详细流程 →</button>
+          </div>
+          <div class="process-grid">
+            <article class="process-item"><span class="process-number">01</span><h3>注册并登录</h3><p>使用邮箱完成账户注册，登录后管理订单。</p></article>
+            <article class="process-item"><span class="process-number">02</span><h3>填写换汇信息</h3><p>选择方向，输入金额及收付款账户。</p></article>
+            <article class="process-item"><span class="process-number">03</span><h3>充值点数并付款</h3><p>确认订单后，使用点数完成换汇申请。</p></article>
+            <article class="process-item"><span class="process-number">04</span><h3>上传凭证</h3><p>上传付款凭证，随时查看订单状态。</p></article>
+          </div>
+        </section>
+
+        <section class="soft-section">
+          <div class="shell account-type-grid">
+            <div>
+              <p class="eyebrow"><span></span> 支持的方式</p>
+              <h2>常用收付款账户，<br />一次填写，后续更快捷。</h2>
+              <p class="body-copy">在换汇申请中选择您的账户资料。此原型不会验证或传输任何真实账户信息。</p>
+            </div>
+            <div class="account-chips">
+              <div class="account-chip"><span class="chip-icon bank-cn">中</span><b>中国银行账户</b><small>中国大陆</small></div>
+              <div class="account-chip"><span class="chip-icon bank-my">MY</span><b>马来西亚银行</b><small>Malaysia</small></div>
+              <div class="account-chip"><span class="chip-icon alipay">支</span><b>支付宝</b><small>Alipay</small></div>
+              <div class="account-chip"><span class="chip-icon tng">T</span><b>Touch 'n Go</b><small>TNG eWallet</small></div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section class="page" id="page-rates" data-page="rates">
+        <div class="shell narrow-shell page-intro">
+          <p class="eyebrow"><span></span> 汇率中心</p>
+          <h1>清楚掌握当前参考汇率</h1>
+          <p>以下数字仅用于原型演示。实际平台应接入受信任汇率服务，并在下单时明确展示最终成交汇率。</p>
+        </div>
+        <div class="shell rate-detail-grid">
+          <article class="rate-detail-card elevated">
+            <div class="rate-pair"><span class="flag cn">¥</span><i>→</i><span class="flag my">RM</span></div>
+            <p>CNY 换 MYR</p>
+            <h2>1 CNY = <strong id="rate-cny-myr">0.6252</strong> MYR</h2>
+            <span class="direction-up">↗ 参考中间价</span>
+          </article>
+          <article class="rate-detail-card elevated">
+            <div class="rate-pair"><span class="flag my">RM</span><i>→</i><span class="flag cn">¥</span></div>
+            <p>MYR 换 CNY</p>
+            <h2>1 MYR = <strong id="rate-myr-cny">1.5995</strong> CNY</h2>
+            <span class="direction-up">↗ 参考中间价</span>
+          </article>
+        </div>
+        <div class="shell calculator-panel">
+          <div class="panel-copy"><p class="eyebrow"><span></span> 汇率计算器</p><h2>先估算，再申请。</h2><p>金额仅供估算，最终金额以订单确认页显示为准。</p></div>
+          <div class="calculator-form">
+            <label>换汇方向<select id="rate-direction"><option value="cny-myr">CNY → MYR</option><option value="myr-cny">MYR → CNY</option></select></label>
+            <label>输入金额<div class="input-with-unit"><input id="rate-amount" type="number" min="0" value="1000" /><span id="rate-input-unit">CNY</span></div></label>
+            <div class="calc-output"><small>预计收到</small><strong id="rate-output">625.20 <em>MYR</em></strong></div>
+            <button class="button button-primary" data-action="start-exchange">开始申请</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="page" id="page-how" data-page="how">
+        <div class="shell narrow-shell page-intro center-intro">
+          <p class="eyebrow"><span></span> 换汇流程</p>
+          <h1>一条清楚的换汇路径</h1>
+          <p>从账户注册到上传付款凭证，每一个阶段均可在“我的订单”中查看。</p>
+        </div>
+        <div class="shell timeline">
+          <article><span>01</span><div><h2>创建账户</h2><p>使用邮箱、密码和昵称注册演示账户。正式服务还应加入手机验证及身份审核。</p></div></article>
+          <article><span>02</span><div><h2>填写换汇申请</h2><p>选择 CNY / MYR 方向，输入金额，并填写收款账户资料。</p></div></article>
+          <article><span>03</span><div><h2>确认订单与点数</h2><p>核对参考汇率及到账金额，充值或使用账户内的模拟点数。</p></div></article>
+          <article><span>04</span><div><h2>上传付款凭证</h2><p>选择图片或 PDF 作为付款凭证；原型仅显示文件名称，不会上传文件。</p></div></article>
+          <article><span>05</span><div><h2>跟进订单状态</h2><p>提交成功后在订单页查看“待确认”等模拟状态。</p></div></article>
+        </div>
+        <div class="shell center-action"><button class="button button-primary button-large" data-action="start-exchange">现在开始换汇</button></div>
+      </section>
+
+      <section class="page" id="page-login" data-page="login">
+        <div class="auth-wrap">
+          <div class="auth-aside"><span class="brand-mark">M</span><h1>欢迎回来。</h1><p>登录后查看点数、订单与换汇进度。</p><div class="aside-mini-rate"><small>当前参考汇率</small><b>1 CNY = 0.6252 MYR</b></div></div>
+          <form class="auth-card elevated" id="login-form">
+            <button type="button" class="close-button" data-action="go-home" aria-label="关闭">×</button>
+            <p class="eyebrow"><span></span> 登录</p><h2>登录您的账户</h2><p class="form-hint">这是演示原型，填写任意格式正确的邮箱和密码即可登录。</p>
+            <label>邮箱地址<input type="email" name="email" placeholder="name@example.com" required /></label>
+            <label>密码<input type="password" name="password" placeholder="请输入密码" minlength="6" required /></label>
+            <button class="button button-primary button-full" type="submit">登录</button>
+            <p class="form-footer">还没有账户？<button type="button" class="inline-button" data-action="go-register">立即注册</button></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="page" id="page-register" data-page="register">
+        <div class="auth-wrap">
+          <div class="auth-aside"><span class="brand-mark">M</span><h1>开始您的<br />换汇申请。</h1><p>创建演示账户，体验完整前端流程。</p><div class="aside-note">仅用于本浏览器演示<br />不会发送验证邮件</div></div>
+          <form class="auth-card elevated" id="register-form">
+            <button type="button" class="close-button" data-action="go-home" aria-label="关闭">×</button>
+            <p class="eyebrow"><span></span> 创建账户</p><h2>注册一个账户</h2><p class="form-hint">所有资料只会保存在您的浏览器中。</p>
+            <label>昵称<input type="text" name="name" placeholder="例如：小林" required /></label>
+            <label>邮箱地址<input type="email" name="email" placeholder="name@example.com" required /></label>
+            <label>设置密码<input type="password" name="password" placeholder="至少 6 位" minlength="6" required /></label>
+            <label class="check-label"><input type="checkbox" required /> <span>我已阅读并同意演示版使用说明</span></label>
+            <button class="button button-primary button-full" type="submit">创建账户</button>
+            <p class="form-footer">已有账户？<button type="button" class="inline-button" data-action="go-login">去登录</button></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="page app-page" id="page-dashboard" data-page="dashboard">
+        <div class="shell dashboard-layout">
+          <aside class="account-sidebar">
+            <div class="profile-block"><span class="avatar" id="user-avatar">用</span><div><b id="user-name">用户</b><small id="user-email">user@example.com</small></div></div>
+            <nav class="account-nav">
+              <button class="account-nav-link selected" data-action="go-dashboard">▦ <span>账户概览</span></button>
+              <button class="account-nav-link" data-action="go-exchange">⇄ <span>申请换汇</span></button>
+              <button class="account-nav-link" data-action="go-orders">▤ <span>我的订单</span></button>
+              <button class="account-nav-link" data-action="go-wallet">◇ <span>点数账户</span></button>
+              <button class="account-nav-link" data-action="go-accounts">▣ <span>收款账户</span></button>
+            </nav>
+            <button class="logout-button" data-action="logout">退出登录</button>
+          </aside>
+          <div class="account-content">
+            <div class="content-heading"><div><p class="eyebrow"><span></span> 账户概览</p><h1>您好，<span id="dashboard-name">用户</span></h1><p>欢迎回来，今天也能从容安排每一笔款项。</p></div><button class="button button-primary" data-action="go-exchange">申请换汇 →</button></div>
+            <div class="overview-cards">
+              <article><small>可用点数</small><strong id="wallet-balance">0</strong><span>点</span><button class="inline-button" data-action="go-wallet">充值点数 →</button></article>
+              <article><small>进行中的订单</small><strong id="ongoing-orders">0</strong><span>笔</span><button class="inline-button" data-action="go-orders">查看订单 →</button></article>
+              <article><small>参考汇率</small><strong>0.6252</strong><span>MYR / CNY</span><button class="inline-button" data-action="go-rates">查看汇率 →</button></article>
+            </div>
+            <section class="dashboard-section"><div class="section-title-row"><h2>最近订单</h2><button class="text-button arrow-link" data-action="go-orders">全部订单 →</button></div><div id="recent-orders" class="empty-state"><span>◌</span><h3>还没有换汇订单</h3><p>完成第一笔换汇申请后，订单会显示在这里。</p><button class="button button-primary" data-action="go-exchange">开始换汇</button></div></section>
+          </div>
+        </div>
+      </section>
+
+      <section class="page app-page" id="page-exchange" data-page="exchange">
+        <div class="shell exchange-shell">
+          <button class="back-link" data-action="go-dashboard">← 返回账户概览</button>
+          <div class="exchange-heading"><p class="eyebrow"><span></span> 新建申请</p><h1>申请换汇</h1><p>填写信息后提交演示订单。</p></div>
+          <div class="stepper" id="stepper"><div class="step active"><b>1</b><span>换汇金额</span></div><i></i><div class="step"><b>2</b><span>收款账户</span></div><i></i><div class="step"><b>3</b><span>确认订单</span></div><i></i><div class="step"><b>4</b><span>付款凭证</span></div></div>
+          <form id="exchange-form" class="exchange-card elevated">
+            <section class="exchange-step active" data-step="1">
+              <h2>您想怎样换汇？</h2><p class="form-hint">请选择换汇方向与金额。</p>
+              <div class="direction-options"><label class="direction-option selected"><input type="radio" name="direction" value="cny-myr" checked /><span class="currency-circles"><b>¥</b><i>→</i><b>RM</b></span><strong>CNY 换 MYR</strong><small>人民币兑换马币</small></label><label class="direction-option"><input type="radio" name="direction" value="myr-cny" /><span class="currency-circles"><b class="myr-circle">RM</b><i>→</i><b>¥</b></span><strong>MYR 换 CNY</strong><small>马币兑换人民币</small></label></div>
+              <div class="amount-row"><label>您支付的金额<div class="amount-input"><input id="exchange-send" type="number" min="1" value="1000" required /><span id="exchange-send-unit">CNY</span></div></label><button type="button" class="swap-button" id="swap-direction" aria-label="交换方向">⇄</button><label>预计收到的金额<div class="amount-input readonly"><output id="exchange-receive">625.20</output><span id="exchange-receive-unit">MYR</span></div></label></div>
+              <div class="rate-info-line"><span>当前参考汇率</span><b id="exchange-rate">1 CNY = 0.6252 MYR</b><small>演示数据</small></div><div class="step-actions"><span></span><button type="button" class="button button-primary" data-next-step="2">下一步：填写收款账户 →</button></div>
+            </section>
+            <section class="exchange-step" data-step="2">
+              <h2>收款账户资料</h2><p class="form-hint">此页仅模拟表单填写，不会验证或传输资料。</p>
+              <div class="account-form-grid"><label>收款方式<select id="recipient-method"><option value="马来西亚银行">马来西亚银行</option><option value="Touch 'n Go">Touch 'n Go eWallet</option><option value="中国银行">中国银行账户</option><option value="支付宝">支付宝</option></select></label><label>账户姓名<input id="recipient-name" type="text" placeholder="请输入账户持有人姓名" required /></label><label id="bank-name-wrap">银行名称<input id="recipient-bank" type="text" placeholder="例如：Maybank" /></label><label>账户号码 / 手机号码<input id="recipient-number" type="text" placeholder="请输入账户号码" required /></label></div>
+              <div class="info-box">ⓘ 请确认收款信息正确。原型不会真实转账，资料只存于此浏览器。</div><div class="step-actions"><button type="button" class="button button-ghost" data-prev-step="1">← 上一步</button><button type="button" class="button button-primary" data-next-step="3">下一步：确认订单 →</button></div>
+            </section>
+            <section class="exchange-step" data-step="3">
+              <h2>确认您的订单</h2><p class="form-hint">请检查换汇资料。提交后会扣除相应的模拟点数。</p>
+              <div class="order-summary"><div><span>换汇方向</span><b id="summary-direction">CNY → MYR</b></div><div><span>支付金额</span><b id="summary-send">1,000.00 CNY</b></div><div><span>预计收到</span><b id="summary-receive">625.20 MYR</b></div><div><span>收款账户</span><b id="summary-account">—</b></div><div class="summary-total"><span>所需点数</span><b id="summary-points">1,000 点</b></div></div>
+              <div class="points-notice"><div><span class="points-icon">◇</span><div><b>您的可用点数：<strong id="confirm-balance">0</strong> 点</b><small>本原型以 1 点 = 1 CNY 等值演示。</small></div></div><button type="button" class="button button-ghost button-small" data-action="go-wallet">充值点数</button></div><div class="step-actions"><button type="button" class="button button-ghost" data-prev-step="2">← 上一步</button><button type="button" class="button button-primary" id="confirm-order">确认并继续付款 →</button></div>
+            </section>
+            <section class="exchange-step" data-step="4">
+              <h2>上传付款凭证</h2><p class="form-hint">订单 <strong id="proof-order-id">—</strong> 已创建。请选择一张付款凭证图片或 PDF。</p>
+              <label class="upload-zone" id="upload-zone"><input id="proof-file" type="file" accept="image/*,.pdf" /><span class="upload-icon">↑</span><b>选择付款凭证</b><small>支持 JPG、PNG 或 PDF（演示中不会上传）</small></label><p id="selected-file" class="selected-file"></p>
+              <div class="info-box">提交凭证后，订单将显示为“待确认”。实际业务需由工作人员审核付款资料。</div><div class="step-actions"><button type="button" class="button button-ghost" data-prev-step="3">← 上一步</button><button type="button" class="button button-primary" id="submit-proof">提交凭证并完成</button></div>
+            </section>
+          </form>
+        </div>
+      </section>
+
+      <section class="page app-page" id="page-orders" data-page="orders">
+        <div class="shell dashboard-layout"><aside class="account-sidebar sidebar-clone"></aside><div class="account-content"><div class="content-heading"><div><p class="eyebrow"><span></span> 我的订单</p><h1>换汇订单</h1><p>查看您提交的全部换汇申请。</p></div><button class="button button-primary" data-action="go-exchange">申请换汇 →</button></div><div id="orders-list" class="orders-list"></div></div></div>
+      </section>
+
+      <section class="page app-page" id="page-wallet" data-page="wallet">
+        <div class="shell dashboard-layout"><aside class="account-sidebar sidebar-clone"></aside><div class="account-content"><div class="content-heading"><div><p class="eyebrow"><span></span> 点数账户</p><h1>管理您的点数</h1><p>点数仅为原型演示单位，不具备任何实际价值。</p></div></div><div class="wallet-hero"><div><small>可用点数</small><strong id="wallet-balance-large">0</strong><span>点</span></div><p>1 点 = 1 CNY 等值（演示规则）</p></div><section class="recharge-panel"><div><p class="eyebrow"><span></span> 充值点数</p><h2>为演示账户添加点数</h2><p>点击金额即可添加模拟点数，模拟真实流程中的充值结果。</p></div><div class="recharge-actions"><div class="recharge-options"><button data-recharge="500">+ 500 点</button><button data-recharge="1000">+ 1,000 点</button><button data-recharge="3000">+ 3,000 点</button></div><button class="button button-primary" id="custom-recharge">自定义充值</button></div></section><section class="dashboard-section"><h2>点数记录</h2><div id="wallet-history" class="history-list"></div></section></div></div>
+      </section>
+
+      <section class="page app-page" id="page-accounts" data-page="accounts">
+        <div class="shell dashboard-layout"><aside class="account-sidebar sidebar-clone"></aside><div class="account-content"><div class="content-heading"><div><p class="eyebrow"><span></span> 收款账户</p><h1>收款账户管理</h1><p>在原型中，账户资料会随换汇申请保存至浏览器。</p></div><button class="button button-primary" data-action="go-exchange">新增账户 →</button></div><div id="saved-accounts" class="saved-accounts"></div></div></div>
+      </section>
+
+      <section class="page" id="page-help" data-page="help">
+        <div class="shell narrow-shell page-intro"><p class="eyebrow"><span></span> 帮助中心</p><h1>原型使用说明</h1><p>这里说明当前前端原型能做什么，以及真实平台上线前还需要补充什么。</p></div>
+        <div class="shell faq-list"><details open><summary>这个网站可以真实换汇吗？<span>+</span></summary><p>不可以。这是纯前端原型：汇率、点数、订单和付款凭证均为模拟数据，不会发生资金交易。</p></details><details><summary>注册资料会发送到服务器吗？<span>+</span></summary><p>不会。资料只以浏览器本地演示数据形式保存，可通过清除浏览器资料移除。</p></details><details><summary>点数在真实平台中代表什么？<span>+</span></summary><p>此处将点数作为演示中的预存余额。真实业务需要确认其实际定义、充值渠道、退款规则与监管合规要求。</p></details><details><summary>上线前还需要做什么？<span>+</span></summary><p>需加入安全认证、服务端数据库、真实支付与汇率服务、文件存储、后台审核及符合相关地区法规的合规与风控流程。</p></details></div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <footer><div class="shell footer-inner"><span>MYCN 换汇 · 前端交互原型</span><span>仅作产品流程演示 · 2026</span></div></footer>
+    <script src="app.js"></script>
+  </body>
+</html>
