@@ -43,8 +43,8 @@
             <h1>每一笔换汇，<br /><strong>都清楚安心。</strong></h1>
             <p class="hero-text">用清楚的汇率、简单的步骤，完成 CNY 与 MYR 之间的换汇申请。全程可查看订单进度。</p>
             <div class="hero-actions">
-              <button class="button button-primary button-large" data-action="start-exchange">开始换汇 <span>→</span></button>
-              <button class="button button-ghost button-large" data-action="go-how">了解流程</button>
+              <button class="button button-primary button-large" data-action="start-exchange">创建换汇订单 <span>→</span></button>
+              <button class="button button-ghost button-large" data-action="load-demo">查看示例订单</button>
             </div>
             <div class="trust-row">
               <span><b>01</b> 汇率清晰</span>
@@ -76,7 +76,7 @@
                 <span class="currency-tag">MYR</span>
               </div>
             </div>
-            <button class="button button-primary button-full" data-action="start-exchange">按此汇率换汇</button>
+            <button class="button button-primary button-full" data-action="start-exchange">创建换汇订单</button>
           </div>
         </div>
 
@@ -89,10 +89,10 @@
             <button class="text-button arrow-link" data-action="go-how">查看详细流程 →</button>
           </div>
           <div class="process-grid">
-            <article class="process-item"><span class="process-number">01</span><h3>注册并登录</h3><p>使用邮箱完成账户注册，登录后管理订单。</p></article>
-            <article class="process-item"><span class="process-number">02</span><h3>填写换汇信息</h3><p>选择方向，输入金额及收付款账户。</p></article>
-            <article class="process-item"><span class="process-number">03</span><h3>充值点数并付款</h3><p>确认订单后，使用点数完成换汇申请。</p></article>
-            <article class="process-item"><span class="process-number">04</span><h3>上传凭证</h3><p>上传付款凭证，随时查看订单状态。</p></article>
+            <article class="process-item"><span class="process-number">01</span><h3>充值点数</h3><p>点数用于支付每笔成交的服务费。</p></article>
+            <article class="process-item"><span class="process-number">02</span><h3>建立等候订单</h3><p>填写换汇方向、金额和自己的收款资料。</p></article>
+            <article class="process-item"><span class="process-number">03</span><h3>匹配后冻结点数</h3><p>冻结服务费点数，才会解锁对方账户资料。</p></article>
+            <article class="process-item"><span class="process-number">04</span><h3>双方确认完成</h3><p>上传水单、确认收款，点数才会正式扣除。</p></article>
           </div>
         </section>
 
@@ -204,11 +204,11 @@
             <button class="logout-button" data-action="logout">退出登录</button>
           </aside>
           <div class="account-content">
-            <div class="content-heading"><div><p class="eyebrow"><span></span> 账户概览</p><h1>您好，<span id="dashboard-name">用户</span></h1><p>欢迎回来，今天也能从容安排每一笔款项。</p></div><button class="button button-primary" data-action="go-exchange">申请换汇 →</button></div>
+            <div class="content-heading"><div><p class="eyebrow"><span></span> 账户概览</p><h1>您好，<span id="dashboard-name">用户</span></h1><p>点数会在订单匹配后冻结，双方完成交易才真正扣除。</p></div><button class="button button-primary" data-action="go-exchange">创建订单 →</button></div>
             <div class="overview-cards">
               <article><small>可用点数</small><strong id="wallet-balance">0</strong><span>点</span><button class="inline-button" data-action="go-wallet">充值点数 →</button></article>
+              <article><small>冻结中的点数</small><strong id="frozen-balance">0</strong><span>点</span><button class="inline-button" data-action="go-orders">查看关联订单 →</button></article>
               <article><small>进行中的订单</small><strong id="ongoing-orders">0</strong><span>笔</span><button class="inline-button" data-action="go-orders">查看订单 →</button></article>
-              <article><small>参考汇率</small><strong>0.6252</strong><span>MYR / CNY</span><button class="inline-button" data-action="go-rates">查看汇率 →</button></article>
             </div>
             <section class="dashboard-section"><div class="section-title-row"><h2>最近订单</h2><button class="text-button arrow-link" data-action="go-orders">全部订单 →</button></div><div id="recent-orders" class="empty-state"><span>◌</span><h3>还没有换汇订单</h3><p>完成第一笔换汇申请后，订单会显示在这里。</p><button class="button button-primary" data-action="go-exchange">开始换汇</button></div></section>
           </div>
@@ -218,8 +218,8 @@
       <section class="page app-page" id="page-exchange" data-page="exchange">
         <div class="shell exchange-shell">
           <button class="back-link" data-action="go-dashboard">← 返回账户概览</button>
-          <div class="exchange-heading"><p class="eyebrow"><span></span> 新建申请</p><h1>申请换汇</h1><p>填写信息后提交演示订单。</p></div>
-          <div class="stepper" id="stepper"><div class="step active"><b>1</b><span>换汇金额</span></div><i></i><div class="step"><b>2</b><span>收款账户</span></div><i></i><div class="step"><b>3</b><span>确认订单</span></div><i></i><div class="step"><b>4</b><span>付款凭证</span></div></div>
+          <div class="exchange-heading"><p class="eyebrow"><span></span> 新建等候单</p><h1>创建换汇订单</h1><p>订单匹配后才需要冻结点数，并解锁对方资料。</p></div>
+          <div class="stepper" id="stepper"><div class="step active"><b>1</b><span>换汇金额</span></div><i></i><div class="step"><b>2</b><span>我的收款账户</span></div><i></i><div class="step"><b>3</b><span>冻结服务费</span></div></div>
           <form id="exchange-form" class="exchange-card elevated">
             <section class="exchange-step active" data-step="1">
               <h2>您想怎样换汇？</h2><p class="form-hint">请选择换汇方向与金额。</p>
@@ -235,12 +235,7 @@
             <section class="exchange-step" data-step="3">
               <h2>确认您的订单</h2><p class="form-hint">请检查换汇资料。提交后会扣除相应的模拟点数。</p>
               <div class="order-summary"><div><span>换汇方向</span><b id="summary-direction">CNY → MYR</b></div><div><span>支付金额</span><b id="summary-send">1,000.00 CNY</b></div><div><span>预计收到</span><b id="summary-receive">625.20 MYR</b></div><div><span>收款账户</span><b id="summary-account">—</b></div><div class="summary-total"><span>所需点数</span><b id="summary-points">1,000 点</b></div></div>
-              <div class="points-notice"><div><span class="points-icon">◇</span><div><b>您的可用点数：<strong id="confirm-balance">0</strong> 点</b><small>本原型以 1 点 = 1 CNY 等值演示。</small></div></div><button type="button" class="button button-ghost button-small" data-action="go-wallet">充值点数</button></div><div class="step-actions"><button type="button" class="button button-ghost" data-prev-step="2">← 上一步</button><button type="button" class="button button-primary" id="confirm-order">确认并继续付款 →</button></div>
-            </section>
-            <section class="exchange-step" data-step="4">
-              <h2>上传付款凭证</h2><p class="form-hint">订单 <strong id="proof-order-id">—</strong> 已创建。请选择一张付款凭证图片或 PDF。</p>
-              <label class="upload-zone" id="upload-zone"><input id="proof-file" type="file" accept="image/*,.pdf" /><span class="upload-icon">↑</span><b>选择付款凭证</b><small>支持 JPG、PNG 或 PDF（演示中不会上传）</small></label><p id="selected-file" class="selected-file"></p>
-              <div class="info-box">提交凭证后，订单将显示为“待确认”。实际业务需由工作人员审核付款资料。</div><div class="step-actions"><button type="button" class="button button-ghost" data-prev-step="3">← 上一步</button><button type="button" class="button button-primary" id="submit-proof">提交凭证并完成</button></div>
+              <div class="points-notice"><div><span class="points-icon">◇</span><div><b>您的可用点数：<strong id="confirm-balance">0</strong> 点</b><small>匹配成功后，对应点数会先冻结；双方确认收款才会扣除。</small></div></div><button type="button" class="button button-ghost button-small" data-action="go-wallet">充值点数</button></div><div class="step-actions"><button type="button" class="button button-ghost" data-prev-step="2">← 上一步</button><button type="button" class="button button-primary" id="confirm-order">创建等候订单 →</button></div>
             </section>
           </form>
         </div>
@@ -251,19 +246,28 @@
       </section>
 
       <section class="page app-page" id="page-wallet" data-page="wallet">
-        <div class="shell dashboard-layout"><aside class="account-sidebar sidebar-clone"></aside><div class="account-content"><div class="content-heading"><div><p class="eyebrow"><span></span> 点数账户</p><h1>管理您的点数</h1><p>点数仅为原型演示单位，不具备任何实际价值。</p></div></div><div class="wallet-hero"><div><small>可用点数</small><strong id="wallet-balance-large">0</strong><span>点</span></div><p>1 点 = 1 CNY 等值（演示规则）</p></div><section class="recharge-panel"><div><p class="eyebrow"><span></span> 充值点数</p><h2>为演示账户添加点数</h2><p>点击金额即可添加模拟点数，模拟真实流程中的充值结果。</p></div><div class="recharge-actions"><div class="recharge-options"><button data-recharge="500">+ 500 点</button><button data-recharge="1000">+ 1,000 点</button><button data-recharge="3000">+ 3,000 点</button></div><button class="button button-primary" id="custom-recharge">自定义充值</button></div></section><section class="dashboard-section"><h2>点数记录</h2><div id="wallet-history" class="history-list"></div></section></div></div>
+        <div class="shell dashboard-layout"><aside class="account-sidebar sidebar-clone"></aside><div class="account-content"><div class="content-heading"><div><p class="eyebrow"><span></span> 点数账户</p><h1>管理您的点数</h1><p>匹配订单时先冻结；订单双方完成后，冻结点数才会扣除。</p></div></div><div class="points-overview"><div class="wallet-hero"><div><small>可用点数</small><strong id="wallet-balance-large">0</strong><span>点</span></div><p>可用于匹配下一笔订单</p></div><div class="frozen-card"><small>冻结中的点数</small><strong id="wallet-frozen-large">0</strong><span>点</span><p>交易取消前不会被使用或退回。</p></div></div><section class="recharge-panel"><div><p class="eyebrow"><span></span> 充值点数</p><h2>为演示账户添加点数</h2><p>点击金额即可添加模拟点数，模拟真实流程中的充值结果。</p></div><div class="recharge-actions"><div class="recharge-options"><button data-recharge="500">+ 500 点</button><button data-recharge="1000">+ 1,000 点</button><button data-recharge="3000">+ 3,000 点</button></div><button class="button button-primary" id="custom-recharge">自定义充值</button></div></section><section class="dashboard-section"><h2>点数记录</h2><div id="wallet-history" class="history-list"></div></section></div></div>
       </section>
 
       <section class="page app-page" id="page-accounts" data-page="accounts">
         <div class="shell dashboard-layout"><aside class="account-sidebar sidebar-clone"></aside><div class="account-content"><div class="content-heading"><div><p class="eyebrow"><span></span> 收款账户</p><h1>收款账户管理</h1><p>在原型中，账户资料会随换汇申请保存至浏览器。</p></div><button class="button button-primary" data-action="go-exchange">新增账户 →</button></div><div id="saved-accounts" class="saved-accounts"></div></div></div>
       </section>
 
+      <section class="page app-page" id="page-order-detail" data-page="order-detail">
+        <div class="shell dashboard-layout"><aside class="account-sidebar sidebar-clone"></aside><div class="account-content" id="order-detail-content"></div></div>
+      </section>
+
+      <section class="page app-page" id="page-dev" data-page="dev">
+        <div class="shell dashboard-layout"><aside class="account-sidebar sidebar-clone"></aside><div class="account-content"><div class="content-heading"><div><p class="eyebrow"><span></span> 仅供运营人员</p><h1>开发者模式：派单优先级</h1><p>这组设置决定“客户出人民币、需要马币”的订单优先分配给谁。</p></div><span class="status">原型演示</span></div><div class="priority-panel"><div class="priority-intro"><h2>当前派单顺序</h2><p>系统先尝试由高优先级角色完整承接订单；无法完整承接时，再按顺序寻找可组合的订单，最多拆成三笔。</p><div class="logic-note"><b>示例：</b>客户出 CNY 5,000 → 优先给供应商。供应商无法满足时，才交给你／伙伴，再考虑客户等候单。</div></div><div class="priority-list" id="priority-list"><article><span class="priority-number">1</span><div><b>供应商</b><small>提供马币；默认第一优先</small></div><select data-priority-role="supplier"><option value="1" selected>优先级 1</option><option value="2">优先级 2</option><option value="3">优先级 3</option></select></article><article><span class="priority-number">2</span><div><b>我／伙伴</b><small>作为平台内的流动性提供者</small></div><select data-priority-role="partner"><option value="1">优先级 1</option><option value="2" selected>优先级 2</option><option value="3">优先级 3</option></select></article><article><span class="priority-number">3</span><div><b>客户等候单</b><small>仅在前两者未满足时参与撮合</small></div><select data-priority-role="customer"><option value="1">优先级 1</option><option value="2">优先级 2</option><option value="3" selected>优先级 3</option></select></article></div><button class="button button-primary" id="save-priority">保存演示优先级</button></div></div></div>
+      </section>
+
       <section class="page" id="page-help" data-page="help">
         <div class="shell narrow-shell page-intro"><p class="eyebrow"><span></span> 帮助中心</p><h1>原型使用说明</h1><p>这里说明当前前端原型能做什么，以及真实平台上线前还需要补充什么。</p></div>
-        <div class="shell faq-list"><details open><summary>这个网站可以真实换汇吗？<span>+</span></summary><p>不可以。这是纯前端原型：汇率、点数、订单和付款凭证均为模拟数据，不会发生资金交易。</p></details><details><summary>注册资料会发送到服务器吗？<span>+</span></summary><p>不会。资料只以浏览器本地演示数据形式保存，可通过清除浏览器资料移除。</p></details><details><summary>点数在真实平台中代表什么？<span>+</span></summary><p>此处将点数作为演示中的预存余额。真实业务需要确认其实际定义、充值渠道、退款规则与监管合规要求。</p></details><details><summary>上线前还需要做什么？<span>+</span></summary><p>需加入安全认证、服务端数据库、真实支付与汇率服务、文件存储、后台审核及符合相关地区法规的合规与风控流程。</p></details></div>
+        <div class="shell faq-list"><details open><summary>这个网站可以真实换汇吗？<span>+</span></summary><p>不可以。这是纯前端原型：汇率、点数、订单和付款凭证均为模拟数据，不会发生资金交易。</p></details><details><summary>注册资料会发送到服务器吗？<span>+</span></summary><p>不会。资料只以浏览器本地演示数据形式保存，可通过清除浏览器资料移除。</p></details><details><summary>点数在原型中代表什么？<span>+</span></summary><p>用户先充值点数。订单匹配后，服务费点数由可用余额移动至冻结余额；双方确认收款完成后才会实际扣除。</p></details><details><summary>上线前还需要做什么？<span>+</span></summary><p>需加入安全认证、服务端数据库、真实支付与汇率服务、文件存储、后台审核及符合相关地区法规的合规与风控流程。</p></details></div>
       </section>
     </main>
 
+    <div class="modal-backdrop" id="proof-modal" aria-hidden="true"><section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="close-button" data-action="close-modal" aria-label="关闭">×</button><p class="eyebrow"><span></span> 转账水单</p><h2 id="modal-title">上传我的转账水单</h2><p class="form-hint" id="modal-description">选择图片或 PDF 后，再点击确认上传。</p><div id="modal-body"><label class="upload-zone compact-upload"><input id="modal-proof-file" type="file" accept="image/*,.pdf" /><span class="upload-icon">↑</span><b>选择图片或 PDF</b><small>演示原型只记录文件名称</small></label><p id="modal-selected-file" class="selected-file"></p></div><div class="modal-actions" id="modal-actions"><button class="button button-ghost" data-action="close-modal">取消</button><button class="button button-primary" id="confirm-proof-upload">确认上传</button></div></section></div>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <footer><div class="shell footer-inner"><span>MYCN 换汇 · 前端交互原型</span><span>仅作产品流程演示 · 2026</span></div></footer>
     <script src="app.js"></script>
